@@ -3,96 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Conta</title>
-</head>
-<body>
-    <div class="criarconta">
-    <form id="formcriarconta">
 
-        <h2>Criar Conta</h2>
-        <input type="text" id="nome" placeholder="Digite seu nome" required>
-        <input type="number" id="idade" placeholder="Digite sua idade" min="18" max="120" required>
-<input type="email" id="email" placeholder="Digite seu e-mail" required>
-<input type="password" id="senha" placeholder="Digite sua senha" required>
-<input type="password" id="confirmesenha" placeholder="Confirme sua senha" required>
-<button type="submit"> Criar conta </button>
-        <p id="mensagem"></p>
+    <title>Criar Conta | DevGirls</title>
 
-    </form>
-</div>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-    background-image: url(./fundopagina.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+            background-image: url("./fundopagina.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
 
-    /* Centraliza o container na tela */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+            min-height: 100vh;
+            min-height: 100dvh;
 
-    /* Ocupa a altura da tela */
-    min-height: 100vh;
-    margin: 0; }
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    .criarconta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
 
-    background-color: rgb(255, 192, 203);
-    color: rgb(165, 0, 129);
+        /* Container de cadastro */
+        .criarconta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    width: 500px;
-    height: 500px;
+            width: 100%;
+            max-width: 500px;
 
-    border-radius: 20px;
-}
+            padding: 35px 30px;
 
-.criarconta form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+            background-color: rgb(255, 192, 203);
+            color: rgb(165, 0, 129);
 
-.criarconta input {
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #a50081;
-}
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
 
-.criarconta button {
-    padding: 12px;
-    background-color: #a50081;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
+        /* Formulário */
+        .criarconta form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            width: 100%;
+        }
+
+        .criarconta h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        /* Campos de preenchimento */
+        .criarconta input {
+            width: 100%;
+            min-height: 45px;
+
+            padding: 12px;
+
+            border-radius: 8px;
+            border: 1px solid #a50081;
+
+            font-size: 16px;
+        }
+
+        .criarconta input:focus {
+            outline: 2px solid #ff69b4;
+            border-color: #a50081;
+        }
+
+        /* Botão */
+        .criarconta button {
+            width: 100%;
+            min-height: 45px;
+
+            padding: 12px;
+
+            background-color: #a50081;
+            color: white;
+
+            border: none;
+            border-radius: 8px;
+
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .criarconta button:hover {
+            background-color: #800064;
+        }
+
+        /* Mensagem de retorno */
+        #mensagem {
+            text-align: center;
+            font-size: 14px;
+            overflow-wrap: anywhere;
+        }
+
+        /* Tablets */
+        @media (max-width: 768px) {
+            .criarconta {
+                max-width: 430px;
+                padding: 30px 25px;
+            }
+
+            .criarconta h2 {
+                font-size: 25px;
+            }
+        }
+
+        /* Celulares */
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+
+            .criarconta {
+                width: 100%;
+                max-width: 380px;
+                padding: 25px 18px;
+                border-radius: 15px;
+            }
+
+            .criarconta h2 {
+                font-size: 23px;
+            }
+
+            .criarconta input,
+            .criarconta button {
+                font-size: 15px;
+            }
+
+            .criarconta form {
+                gap: 12px;
+            }
+        }
+
+        /* Celulares pequenos */
+        @media (max-width: 320px) {
+            body {
+                padding: 10px;
+            }
+
+            .criarconta {
+                padding: 20px 12px;
+            }
+
+            .criarconta h2 {
+                font-size: 21px;
+            }
+
+            .criarconta input {
+                padding: 10px;
+            }
+        }
     </style>
-<script>
-const formulario = document.getElementById("formcriarconta");
+</head>
 
-formulario.addEventListener("submit", function(event) {
-    event.preventDefault();
+<body>
 
-    const nome = document.getElementById("nome").value;
-    const senha = document.getElementById("senha").value;
-    const confirmaSenha = document.getElementById("confirmesenha").value;
-    const mensagem = document.getElementById("mensagem");
+    <div class="criarconta">
+        <form id="formcriarconta">
 
-    if (senha !== confirmaSenha) {
-        mensagem.textContent = "As senhas não são iguais!";
-        mensagem.style.color = "red";
-        return;
-    }
+            <h2>Criar Conta</h2>
 
-    mensagem.textContent = "Conta criada com sucesso, " + nome + "!";
-    mensagem.style.color = "green";
+            <input
+                type="text"
+                id="nome"
+                placeholder="Digite seu nome"
+                autocomplete="name"
+                required
+            >
 
-    formulario.reset();
-});
+            <input
+                type="number"
+                id="idade"
+                placeholder="Digite sua idade"
+                min="18"
+                max="120"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Digite seu e-mail"
+                autocomplete="email"
+                required
+            >
+
+            <input
+                type="password"
+                id="senha"
+                placeholder="Digite sua senha"
+                autocomplete="new-password"
+                required
+            >
+
+            <input
+                type="password"
+                id="confirmesenha"
+                placeholder="Confirme sua senha"
+                autocomplete="new-password"
+                required
+            >
+
+            <button type="submit">Criar conta</button>
+
+            <p id="mensagem" role="status" aria-live="polite"></p>
+
+        </form>
+    </div>
+
+    <script>
+        const formulario = document.getElementById("formcriarconta");
+
+        formulario.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById("nome").value.trim();
+            const senha = document.getElementById("senha").value;
+            const confirmaSenha = document.getElementById("confirmesenha").value;
+            const mensagem = document.getElementById("mensagem");
+
+            if (senha !== confirmaSenha) {
+                mensagem.textContent = "As senhas não são iguais!";
+                mensagem.style.color = "red";
+                return;
+            }
+
+            mensagem.textContent =
+                "Conta criada com sucesso, " + nome + "!";
+            mensagem.style.color = "green";
+
+            formulario.reset();
+        });
+    </script>
+
+</body>
+</html>
 </script>
 </body>
 </html>
