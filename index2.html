@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta</title>
+</head>
+<body>
+    <div class="criarconta">
+    <form id="formcriarconta">
+
+        <h2>Criar Conta</h2>
+        <input type="text" id="nome" placeholder="Digite seu nome" required>
+        <input type="number" id="idade" placeholder="Digite sua idade" min="18" max="120" required>
+<input type="email" id="email" placeholder="Digite seu e-mail" required>
+<input type="password" id="senha" placeholder="Digite sua senha" required>
+<input type="password" id="confirmesenha" placeholder="Confirme sua senha" required>
+<button type="submit"> Criar conta </button>
+        <p id="mensagem"></p>
+
+    </form>
+</div>
+    <style>
+        body {
+    background-image: url(./fundopagina.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Centraliza o container na tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Ocupa a altura da tela */
+    min-height: 100vh;
+    margin: 0; }
+
+    .criarconta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgb(255, 192, 203);
+    color: rgb(165, 0, 129);
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 20px;
+}
+
+.criarconta form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.criarconta input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #a50081;
+}
+
+.criarconta button {
+    padding: 12px;
+    background-color: #a50081;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+    </style>
+<script>
+const formulario = document.getElementById("formcriarconta");
+
+formulario.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const nome = document.getElementById("nome").value;
+    const senha = document.getElementById("senha").value;
+    const confirmaSenha = document.getElementById("confirmesenha").value;
+    const mensagem = document.getElementById("mensagem");
+
+    if (senha !== confirmaSenha) {
+        mensagem.textContent = "As senhas não são iguais!";
+        mensagem.style.color = "red";
+        return;
+    }
+
+    mensagem.textContent = "Conta criada com sucesso, " + nome + "!";
+    mensagem.style.color = "green";
+
+    formulario.reset();
+});
+</script>
+</body>
+</html>

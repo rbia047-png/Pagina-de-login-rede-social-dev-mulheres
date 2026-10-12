@@ -1,0 +1,49 @@
+ body {
+    background-image: url(./fundopagina.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Centraliza o container na tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Ocupa a altura da tela */
+    min-height: 100vh;
+    margin: 0; }
+
+    .criarconta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgb(255, 192, 203);
+    color: rgb(165, 0, 129);
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 20px;
+}
+
+.criarconta form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.criarconta input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #a50081;
+}
+
+.criarconta button {
+    padding: 12px;
+    background-color: #a50081;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
