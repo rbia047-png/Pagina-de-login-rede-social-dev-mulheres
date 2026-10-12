@@ -1,83 +1,211 @@
-body {
-    background-image: url(./fundopagina.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-h1{
-    color: rgb(0, 0, 0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.cabeçario{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 1900px;
-    height: 50px;
-    background-color: rgb(165, 0, 129);
-    border-radius: 20px;
-}
-.login{
-    background-color: rgb(165, 0, 129);
-    width: 500px;
-    height: 500px;
-     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 20px;
-}
-.conteiner{
-     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    margin: 30px;
-}
-.login form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.login input {
-    width: 300px;
-    height: 40px;
-    padding: 5px 10px;
-    box-sizing: border-box;
-    font-size: 16px;
-}
+        body {
+            min-height: 100vh;
+            background-image: url("./fundopagina.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
 
-.login button {
-    height: 40px;
-    font-size: 16px;
-    cursor: pointer;
-    color: rgb(161, 41, 161);
-     }
-     .logoredesocial{
-        display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px;
-     }
+        /* Cabeçalho */
+        .cabeçario {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: calc(100% - 30px);
+            min-height: 60px;
+            margin: 15px auto 0;
+            padding: 10px;
+            background-color: rgb(165, 0, 129);
+            border-radius: 20px;
+            text-align: center;
+        }
 
-.esqueceu-senha {
-    display: block;
-    text-align: right;
-    color: #ff1493;
-    text-decoration: none;
-    font-size: 14px;
-    margin: 10px 0 20px;
-}
+        h1 {
+            color: black;
+            font-size: 28px;
+        }
 
-.esqueceu-senha:hover {
-    text-decoration: underline;
-    color: #ff69b4;
-}
-.criarconta{
-    text-decoration: underline;
-    color: #ff69b4;
-}
+        /* Logo da rede social */
+        .logoredesocial {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+        }
+
+        .logoredesocial img {
+            width: 300px;
+            max-width: 80%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* Centralização do login */
+        .conteiner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 20px 15px 40px;
+        }
+
+        /* Caixa de login */
+        .login {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 15px;
+
+            width: 100%;
+            max-width: 500px;
+            padding: 30px 25px;
+
+            background-color: rgb(165, 0, 129);
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .login img {
+            width: 100px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .login h1 {
+            text-align: center;
+            font-size: 28px;
+        }
+
+        /* Formulário */
+        .login form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .login input {
+            width: 100%;
+            min-height: 45px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .login input:focus {
+            outline: 2px solid #ff69b4;
+            border-color: #ff1493;
+        }
+
+        .login button {
+            width: 100%;
+            min-height: 45px;
+            background-color: white;
+            color: rgb(165, 0, 129);
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .login button:hover {
+            background-color: #ffe0f1;
+        }
+
+        /* Links */
+        .esqueceu-senha {
+            display: block;
+            text-align: right;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .esqueceu-senha:hover {
+            text-decoration: underline;
+            color: #ffb6e0;
+        }
+
+        .criarconta {
+            text-align: center;
+            color: white;
+            text-decoration: underline;
+        }
+
+        .criarconta:hover {
+            color: #ffb6e0;
+        }
+
+        /* Tablets e celulares */
+        @media (max-width: 768px) {
+            .cabeçario {
+                min-height: 55px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .logoredesocial {
+                margin: 15px auto;
+            }
+
+            .logoredesocial img {
+                width: 220px;
+            }
+
+            .conteiner {
+                padding-top: 10px;
+            }
+
+            .login {
+                max-width: 420px;
+                padding: 25px 20px;
+            }
+        }
+
+        /* Celulares pequenos */
+        @media (max-width: 400px) {
+            .cabeçario {
+                width: calc(100% - 20px);
+                border-radius: 12px;
+            }
+
+            h1 {
+                font-size: 21px;
+            }
+
+            .logoredesocial img {
+                width: 180px;
+            }
+
+            .conteiner {
+                padding: 10px 10px 30px;
+            }
+
+            .login {
+                padding: 22px 15px;
+                border-radius: 15px;
+            }
+
+            .login h1 {
+                font-size: 24px;
+            }
+
+            .login input,
+            .login button {
+                font-size: 15px;
+            }
+        }
